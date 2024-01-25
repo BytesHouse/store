@@ -1,9 +1,12 @@
 import React from 'react';
+import ProductCard from "../ProductCard/ProductCard";
 
-const Display = () => {
+const Display = (props) => {
     return (
         <main>
-            Display
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                {props.data.map((item) => <ProductCard key={item.id} product={item}/>)}
+            </div>
         </main>
     );
 };
